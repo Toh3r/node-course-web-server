@@ -72,6 +72,12 @@ app.get('/about', (req, res) => {
   });
 });
 
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', { // render about page from views dir
+    pageTitle: 'Projects Page', // place information you want to inject into page asa second arguement
+  });
+});
+
 app.get('/bad', (req, res) => {
   res.send({
     error: 'There has been a catastrophic error, go back, go back as far as you can....'
