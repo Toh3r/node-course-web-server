@@ -2,6 +2,9 @@ const express = require('express'); // import express framework
 const hbs = require('hbs');
 const fs = require('fs');
 
+//Set up enviroment variable
+const port = process.env.PORT || 3000;
+
 var app = express(); // create express app, to create an app you just have to call the method
 
 // add support for partials
@@ -75,6 +78,6 @@ app.get('/bad', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log('Server is up on port 3000...')
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}`);
 }); // tell app to listen on port 3000
